@@ -14,7 +14,7 @@ export class LoadingComponent implements OnInit {
   routing: boolean = false;
   
   @Input()
-  detedcRoutingOngoing = false;
+  detectRoutingOngoing = false;
 
   constructor(public loadingService: LoadingService,
     private router: Router) {
@@ -22,7 +22,7 @@ export class LoadingComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(this.detedcRoutingOngoing){
+    if(this.detectRoutingOngoing){
       this.router.events.subscribe(
         event => {
           if (event instanceof NavigationStart || event instanceof RouteConfigLoadStart) {
